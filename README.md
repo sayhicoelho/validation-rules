@@ -176,5 +176,9 @@ router.post("/register", registerRequest.validate.bind(registerRequest), authCon
 
 module.exports = router;
 ```
+
+## Important note
+> As you can see, we've set a unique() method to assert our database has only one registry. Therefore, we've passed a User schema that is being created by Mongoose. If you need to make some changes to this method, you are encouraged to override it. By defaults this library uses Mongoose to perform some queries to our database.
+
 ## License
 MIT
