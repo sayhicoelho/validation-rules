@@ -61,5 +61,46 @@ The output should be:
 ]
 ```
 
+## Extending custom validations
+```js
+const { validator, Rule } = require("validation-rules");
+
+class CustomRule extends Rule {
+  customValidation() {
+    this.registerValidation(async (attribute, value, data) => {
+      const pattern = /^[0-9]{13}$/;
+
+      if (!pattern.test(value)) return `The ${attribute} format is invalid.`;
+    });
+
+    return this;
+  }
+}
+
+const data = {
+  phone: "5521974558412abc"
+};
+
+const rules = [
+  new CustomRule("phone")
+    .required()
+    .string()
+    .customValidation()
+];
+
+validator
+  .validate(data, rules)
+  .then(() => console.log("Passed!"))
+  .catch(errors => console.error(errors));
+```
+The output should be:
+```js
+[
+  {
+    attribute: 'phone', message: 'The phone format is invalid.'
+  }
+]
+```
+
 ## License
 MIT
