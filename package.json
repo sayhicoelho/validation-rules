@@ -3,6 +3,15 @@
   "version": "1.0.1",
   "description": "A simple validator for Javascript.",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "validator",
+    "validation",
+    "validate",
+    "rules"
+  ],
   "repository": "https://github.com/sayhicoelho/validation-rules",
   "author": "Renan Coelho <sayhicoelho@gmail.com>",
   "license": "MIT",
