@@ -1,0 +1,10 @@
+{
+  "name": "validation-rules",
+  "version": "1.0.0",
+  "description": "A simple validator for Javascript.",
+  "main": "index.js",
+  "repository": "https://github.com/sayhicoelho/validation-rules",
+  "author": "Renan Coelho <sayhicoelho@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
