@@ -101,6 +101,12 @@ The output should be:
   }
 ]
 ```
+## The registerValidation() method
+This is the method you'll need to use to make custom validations. Here you must pass an async function that receives three parameters:
+
+- **attribute**: The attribute's name.
+- **value**: The attribute's value.
+- **data**: The entire data you've passed before in validator.validate() method.
 
 ## Usage for validating Express requests
 BaseRequest.js
