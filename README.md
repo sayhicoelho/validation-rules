@@ -102,5 +102,73 @@ The output should be:
 ]
 ```
 
+## Usage for validating Express requests
+BaseRequest.js
+```js
+const { validator } = require("validation-rules");
+
+class BaseRequest {
+  async validate(req, res, next) {
+    const rules = this.rules();
+
+    validator
+      .validate(req.body, rules)
+      .then(() => next())
+      .catch(errors => res.status(400).json({ errors }));
+  }
+}
+
+module.exports = BaseRequest;
+```
+RegisterRequest.js
+```js
+const { Rule } = require("validation-rules");
+const User = require("../schemas/userSchema");
+const BaseRequest = require("./BaseRequest");
+
+class RegisterRequest extends BaseRequest {
+  rules() {
+    return [
+      new Rule("name")
+        .required()
+        .string()
+        .minlength(3),
+      new Rule("username")
+        .required()
+        .string()
+        .minlength(6)
+        .unique(User),
+      new Rule("password")
+        .required()
+        .string()
+        .minlength(6),
+      new Rule("password_confirmation")
+        .required()
+        .string()
+        .minlength(6)
+        .confirmed("password")
+    ];
+  }
+}
+
+module.exports = new RegisterRequest();
+```
+router.js
+```js
+const { Router } = require("express");
+const registerRequest = require("./requests/RegisterRequest");
+const authController = require("./controllers/authController");
+const router = new Router();
+
+/**
+ * @param {String} [name]
+ * @param {String} [username]
+ * @param {String} [password]
+ * @param {String} [password_confirmation]
+ */
+router.post("/register", registerRequest.validate.bind(registerRequest), authController.register);
+
+module.exports = router;
+```
 ## License
 MIT
