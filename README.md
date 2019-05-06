@@ -180,5 +180,13 @@ module.exports = router;
 ## Important note
 > As you can see, we've set a unique() method to assert our database has only one registry. Therefore, we've passed a User schema that is being created by Mongoose. If you need to make some changes to this method, you are encouraged to override it. By defaults this library uses Mongoose to perform some queries to our database.
 
+## TODO
+The below list are the features we need to add to this library to make it great.
+
+- Extract validation messages to possibility changes with ease.
+- Add possibility to change the messages language like i18n does.
+- Add TypeScript to improve intellisense.
+- Add tests.
+
 ## License
 MIT
