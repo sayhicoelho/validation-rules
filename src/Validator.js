@@ -16,7 +16,7 @@ class Validator {
       }
     }
 
-    if (errors.length > 0) throw errors
+    if (errors.length > 0) throw errors;
   }
 }
 
