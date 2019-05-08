@@ -43,18 +43,18 @@ class Validator {
 }
 
 function getMessage(attribute, validation, lang) {
+  const fallbackLang = "en";
   const validationName = getValidationName(validation);
-  const langIsPresent = hasProperty(lang, validationName);
-  const messagesIsPresent = isDefined(validation.messages);
-  const langMessages = getLang(lang);
   let message = "";
 
-  if (langIsPresent) {
+  if (hasLang(lang, validationName)) {
     message = getCustomMessage(attribute, lang, validationName);
-  } else if (messagesIsPresent) {
+  } else if (hasLang(fallbackLang, validationName)) {
+    message = getCustomMessage(attribute, fallbackLang, validationName);
+  } else if (isDefined(validation.messages)) {
     message = getValidationMessage(attribute, validation, lang);
   } else {
-    throw new Error(getLangMissingError(validationName));
+    throw new Error(getLangMissingError(lang, validationName));
   }
 
   for (let param in validation) {
@@ -93,7 +93,7 @@ function replaceMessage(message, param, value) {
   return message.replace(`:${param}`, value);
 }
 
-function hasProperty(lang, validationName) {
+function hasLang(lang, validationName) {
   return messages[lang] && messages[lang][validationName];
 }
 
@@ -101,8 +101,8 @@ function isDefined(variable) {
   return typeof variable !== "undefined";
 }
 
-function getLangMissingError(validationName) {
-  return `Lang for validating ${validationName} is missing.`;
+function getLangMissingError(lang, validationName) {
+  return `Lang "${lang}" for validating "${validationName}" is missing.`;
 }
 
 module.exports = Validator;

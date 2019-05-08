@@ -9,5 +9,16 @@ module.exports = {
     length: "The :attribute must be :length characters.",
     unique: "The :attribute has already been taken.",
     phone: "The :attribute format is invalid."
+  },
+  pt: {
+    required: "O campo :attribute é obrigatório.",
+    string: "O campo :attribute tem que ser uma string.",
+    email: "O campo :attribute tem que ser um email válido.",
+    confirmed: "O campo :attribute não confere.",
+    minlength: "O campo :attribute tem que ter pelo menos :min caracteres.",
+    maxlength: "O campo :attribute não pode conter mais de :max caracteres.",
+    length: "O campo :attribute tem que ter exatos :length caracteres.",
+    unique: "O campo :attribute já está sendo usado.",
+    phone: "O formato do campo :attribute é inválido."
   }
 };
