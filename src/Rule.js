@@ -1,76 +1,40 @@
 const BaseRule = require("./BaseRule");
-const utils = require("./utils");
 
 class Rule extends BaseRule {
   required() {
-    this.registerValidation(async (attribute, value) => {
-      if (!value) return `The ${attribute} is required.`;
-    });
-
-    return this;
+    return this.registerValidation("required");
   }
 
   string() {
-    this.registerValidation(async (attribute, value) => {
-      if (typeof value !== "string")
-        return `The ${attribute} must be a string.`;
-    });
-
-    return this;
+    return this.registerValidation("string");
   }
 
   email() {
-    this.registerValidation(async (attribute, value) => {
-      if (!utils.isEmail(value))
-        return `The ${attribute} must be a valid email.`;
-    });
-
-    return this;
+    return this.registerValidation("email");
   }
 
   confirmed(toMatch) {
-    this.registerValidation(async (attribute, value, data) => {
-      if (value != data[toMatch]) return `The ${attribute} does not match.`;
-    });
-
-    return this;
+    return this.registerValidation("confirmed", toMatch);
   }
 
   minlength(min) {
-    this.registerValidation(async (attribute, value) => {
-      if (value.length < min)
-        return `The ${attribute} must be at least ${min} characters.`;
-    });
-
-    return this;
+    return this.registerValidation("minlength", min);
   }
 
   maxlength(max) {
-    this.registerValidation(async (attribute, value) => {
-      if (value.length > max)
-        return `The ${attribute} may not be greater than ${max} characters.`;
-    });
-
-    return this;
+    return this.registerValidation("maxlength", max);
   }
 
   length(length) {
-    this.registerValidation(async (attribute, value) => {
-      if (value.length != length)
-        return `The ${attribute} must be ${length} characters.`;
-    });
-
-    return this;
+    return this.registerValidation("length", length);
   }
 
-  unique(model) {
-    this.registerValidation(async (attribute, value) => {
-      const exists = (await model.countDocuments({ [attribute]: value })) > 0;
+  unique(model, ignoreId = null) {
+    return this.registerValidation("unique", model, ignoreId);
+  }
 
-      if (exists) return `The ${attribute} has already been taken.`;
-    });
-
-    return this;
+  phone() {
+    return this.registerValidation("phone");
   }
 }
 

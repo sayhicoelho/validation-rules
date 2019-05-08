@@ -1,3 +1,5 @@
+const closures = require("./validations");
+
 class Validator {
   async validate(data, rules) {
     const errors = [];
@@ -7,7 +9,13 @@ class Validator {
 
       for (let validation of validations) {
         const value = data[attribute];
-        const error = await validation(attribute, value, data);
+        const params = validation.params;
+        const error = await closures[validation.name](
+          attribute,
+          value,
+          params,
+          data
+        );
 
         if (error) {
           errors.push({ attribute, message: error });
