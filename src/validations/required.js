@@ -1,3 +1,9 @@
-module.exports = async (attribute, value, params, data) => {
-  if (!value) return `The ${attribute} is required.`;
-};
+const Validation = require("../Validation");
+
+class Required extends Validation {
+  async handle(attribute, value, data) {
+    return !!value;
+  }
+}
+
+module.exports = Required;

@@ -1,4 +1,15 @@
-module.exports = async (attribute, value, [min], data) => {
-  if (value.length < min)
-    return `The ${attribute} must be at least ${min} characters.`;
-};
+const Validation = require("../Validation");
+
+class MinLength extends Validation {
+  constructor(min) {
+    super();
+
+    this.min = min;
+  }
+
+  async handle(attribute, value, data) {
+    return value.length >= this.min;
+  }
+}
+
+module.exports = MinLength;

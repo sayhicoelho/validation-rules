@@ -1,5 +1,11 @@
-module.exports = async (attribute, value, params, data) => {
-  const pattern = /^[0-9]{13}$/;
+const Validation = require("../Validation");
 
-  if (!pattern.test(value)) return `The ${attribute} format is invalid.`;
-};
+class Phone extends Validation {
+  async handle(attribute, value, data) {
+    const pattern = /^[0-9]{13}$/;
+
+    return pattern.test(value);
+  }
+}
+
+module.exports = Phone;

@@ -1,3 +1,9 @@
-module.exports = async (attribute, value, params, data) => {
-  if (typeof value !== "string") return `The ${attribute} must be a string.`;
-};
+const Validation = require("../Validation");
+
+class String extends Validation {
+  async handle(attribute, value, data) {
+    return typeof value === "string";
+  }
+}
+
+module.exports = String;

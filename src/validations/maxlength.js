@@ -1,4 +1,15 @@
-module.exports = async (attribute, value, [max], data) => {
-  if (value.length > max)
-    return `The ${attribute} may not be greater than ${max} characters.`;
-};
+const Validation = require("../Validation");
+
+class MaxLength extends Validation {
+  constructor(max) {
+    super();
+
+    this.max = max;
+  }
+
+  async handle(attribute, value, data) {
+    return value.length <= this.max;
+  }
+}
+
+module.exports = MaxLength;

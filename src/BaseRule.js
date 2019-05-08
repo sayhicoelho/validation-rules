@@ -4,8 +4,8 @@ class BaseRule {
     this.validations = [];
   }
 
-  registerValidation(name, ...params) {
-    this.validations.push({ name, params });
+  registerValidation(instance) {
+    this.validations.push(instance);
 
     return this;
   }

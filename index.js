@@ -1,5 +1,2 @@
-const Validator = require("./src/Validator");
-const Rule = require("./src/Rule");
-
-module.exports.validator = new Validator();
-module.exports.Rule = Rule;
+module.exports.Validator = require("./src/Validator");
+module.exports.Rule = require("./src/Rule");

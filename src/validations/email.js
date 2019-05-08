@@ -1,5 +1,10 @@
-const utils = require("../utils");
+const utils = require("../common/utils");
+const Validation = require("../Validation");
 
-module.exports = async (attribute, value, params, data) => {
-  if (!utils.isEmail(value)) return `The ${attribute} must be a valid email.`;
-};
+class Email extends Validation {
+  async handle(attribute, value, data) {
+    return utils.isEmail(value);
+  }
+}
+
+module.exports = Email;

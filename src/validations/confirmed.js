@@ -1,3 +1,9 @@
-module.exports = async (attribute, value, params, data) => {
-  if (value != data[toMatch]) return `The ${attribute} does not match.`;
-};
+const Validation = require("../Validation");
+
+class Confirmed extends Validation {
+  async handle(attribute, value, data) {
+    return value == data[toMatch];
+  }
+}
+
+module.exports = Confirmed;
