@@ -1,12 +1,12 @@
 const messages = require("./common/messages");
 
 class Validator {
-  static get messages() {
-    return messages;
-  }
-
   constructor(lang = "en") {
     this.lang = lang;
+  }
+
+  static get messages() {
+    return messages;
   }
 
   static setCustomMessages(customMessages) {
@@ -63,10 +63,6 @@ function getMessage(attribute, validation, lang) {
   }
 
   return message;
-}
-
-function getLang(lang) {
-  return messages[lang];
 }
 
 function getCustomMessage(attribute, lang, validationName) {
