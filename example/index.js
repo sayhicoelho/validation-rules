@@ -1,13 +1,18 @@
 const { Validator } = require("..");
 const Rule = require("./CustomRule");
+const messages = require("./customMessages");
+const attributes = require("./customAttributes");
 
-const validator = new Validator("en");
+Validator.setCustomMessages(messages);
+Validator.setCustomAttributes(attributes);
+
+const validator = new Validator("pt");
 const data = {
-  name: "154512a",
-  email: "sayhicoelhogmail.com",
+  name: "Renan",
+  email: "sayhicoelho@gmail.com.com",
   phone: "5521974558412",
   password: "secret",
-  password_confirmation: "secrett"
+  password_confirmation: "secret"
 };
 
 const rules = [
@@ -15,7 +20,7 @@ const rules = [
     .required()
     .string()
     .minlength(3)
-    .regex(/^\d{1,}$/),
+    .regex(/^\w{1,}$/),
   new Rule("email")
     .required()
     .string()

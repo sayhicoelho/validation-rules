@@ -1,4 +1,5 @@
 const messages = require("./common/messages");
+const attributes = require("./common/attributes");
 
 class Validator {
   constructor(lang = "en") {
@@ -10,13 +11,11 @@ class Validator {
   }
 
   static setCustomMessages(customMessages) {
-    for (let lang in customMessages) {
-      if (!messages.hasOwnProperty(lang)) messages[lang] = {};
+    updateObj(customMessages, attributes);
+  }
 
-      for (let validationName in customMessages[lang]) {
-        messages[lang][validationName] = customMessages[lang][validationName];
-      }
-    }
+  static setCustomAttributes(customAttributes) {
+    updateObj(customAttributes, attributes);
   }
 
   async validate(data, rules) {
@@ -47,9 +46,9 @@ function getMessage(attribute, validation, lang) {
   const validationName = getValidationName(validation);
   let message = "";
 
-  if (hasLang(lang, validationName)) {
+  if (hasMessageLang(lang, validationName)) {
     message = getCustomMessage(attribute, lang, validationName);
-  } else if (hasLang(fallbackLang, validationName)) {
+  } else if (hasMessageLang(fallbackLang, validationName)) {
     message = getCustomMessage(attribute, fallbackLang, validationName);
   } else if (isDefined(validation.messages)) {
     message = getValidationMessage(attribute, validation, lang);
@@ -68,29 +67,45 @@ function getMessage(attribute, validation, lang) {
 function getCustomMessage(attribute, lang, validationName) {
   const message = messages[lang][validationName];
 
-  return replaceAttribute(message, attribute);
+  return replaceAttribute(lang, message, attribute);
 }
 
 function getValidationMessage(attribute, validation, lang) {
   const message = validation.messages[lang];
 
-  return replaceAttribute(message, attribute);
+  return replaceAttribute(lang, message, attribute);
 }
 
 function getValidationName(validation) {
   return validation.name || validation.constructor.name.toLowerCase();
 }
 
-function replaceAttribute(message, attribute) {
-  return replaceMessage(message, "attribute", attribute);
+function replaceAttribute(lang, message, attribute) {
+  return replaceMessage(
+    message,
+    "attribute",
+    translateAttribute(lang, attribute)
+  );
 }
 
 function replaceMessage(message, param, value) {
   return message.replace(`:${param}`, value);
 }
 
-function hasLang(lang, validationName) {
+function translateAttribute(lang, attribute) {
+  if (hasAttributeLang(lang, attribute)) {
+    attribute = attributes[lang][attribute];
+  }
+
+  return attribute.replace("_", " ");
+}
+
+function hasMessageLang(lang, validationName) {
   return messages[lang] && messages[lang][validationName];
+}
+
+function hasAttributeLang(lang, attribute) {
+  return attributes[lang] && attributes[lang][attribute];
 }
 
 function isDefined(variable) {
@@ -99,6 +114,16 @@ function isDefined(variable) {
 
 function getLangMissingError(lang, validationName) {
   return `Lang "${lang}" for validating "${validationName}" is missing.`;
+}
+
+function updateObj(obj, replacer) {
+  for (let x in obj) {
+    if (!replacer.hasOwnProperty(x)) replacer[x] = {};
+
+    for (let y in obj[x]) {
+      replacer[x][y] = obj[x][y];
+    }
+  }
 }
 
 module.exports = Validator;
