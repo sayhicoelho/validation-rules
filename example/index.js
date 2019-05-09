@@ -9,7 +9,7 @@ Validator.setCustomAttributes(attributes);
 const validator = new Validator("pt");
 const data = {
   name: "Renan",
-  email: "sayhicoelho@gmail.com.com",
+  email: "sayhicoelho@gmail.com",
   phone: "5521974558412",
   password: "secret",
   password_confirmation: "secret"
