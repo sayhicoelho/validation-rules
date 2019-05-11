@@ -1,6 +1,10 @@
 # validation-rules
 A simple validator for Javascript.
 
+> Please do not follow this documentation because it is outdated. I'm working to update it with the new features. See [example](https://github.com/sayhicoelho/validation-rules/tree/master/example) to understand how to use the latest version.
+
+> Note: The lib is under development. Do not use it in production environment unless you know what are you doing.
+
 ## Install
 Using NPM:
 ```bash
