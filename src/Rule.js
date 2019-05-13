@@ -29,8 +29,13 @@ const EndsWith = require("./validations/EndsWith");
 const Slug = require("./validations/Slug");
 const URL = require("./validations/URL");
 const TimeZone = require("./validations/TimeZone");
+const Distinct = require("./validations/Distinct");
 
 class Rule extends BaseRule {
+  distinct() {
+    return this.registerValidation(new Distinct());
+  }
+
   timeZone() {
     return this.registerValidation(new TimeZone());
   }

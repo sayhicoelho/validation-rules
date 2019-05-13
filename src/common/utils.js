@@ -1,3 +1,7 @@
+module.exports.hasDuplicates = arr => {
+  return new Set(arr).size !== arr.length;
+};
+
 module.exports.isValidTimeZone = tz => {
   if (!Intl || !Intl.DateTimeFormat().resolvedOptions().timeZone) {
     throw "Time zones are not available in this environment";
