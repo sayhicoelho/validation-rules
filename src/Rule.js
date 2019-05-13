@@ -19,10 +19,25 @@ const RG = require("./validations/RG");
 const CEP = require("./validations/CEP");
 const Different = require("./validations/Different");
 const Same = require("./validations/Same");
+const IP = require("./validations/IP");
+const IPv4 = require("./validations/IPv4");
+const IPv6 = require("./validations/IPv6");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  IP() {
+    return this.registerValidation(new IP());
+  }
+
+  IPv4() {
+    return this.registerValidation(new IPv4());
+  }
+
+  IPv6() {
+    return this.registerValidation(new IPv6());
   }
 
   cep() {

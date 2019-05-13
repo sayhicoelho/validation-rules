@@ -1,5 +1,8 @@
 module.exports = {
   en: {
+    ip: "The :attribute must be a valid IP.",
+    ipv4: "The :attribute must be a valid IPv4.",
+    ipv6: "The :attribute must be a valid IPv6.",
     cnpj: "The :attribute must be a valid CNPJ.",
     different: "The :attribute must be different than :than.",
     same: "The :attribute must be the same as :as.",
@@ -23,6 +26,9 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    ip: "O campo :attribute tem que ser um IP válido.",
+    ipv4: "O campo :attribute tem que ser um IPv4 válido.",
+    ipv6: "O campo :attribute tem que ser um IPv6 válido.",
     cnpj: "O campo :attribute tem que ser um CNPJ válido.",
     different: "O campo :attribute tem que ser diferente de :than.",
     same: "O campo :attribute tem que ser igual a :as.",
