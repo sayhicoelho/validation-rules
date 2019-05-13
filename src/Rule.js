@@ -26,10 +26,15 @@ const MACAddress = require("./validations/MACAddress");
 const UUID = require("./validations/UUID");
 const StartsWith = require("./validations/StartsWith");
 const EndsWith = require("./validations/EndsWith");
+const Slug = require("./validations/Slug");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  slug() {
+    return this.registerValidation(new Slug());
   }
 
   startsWith(starts) {
