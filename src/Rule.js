@@ -22,10 +22,15 @@ const Same = require("./validations/Same");
 const IP = require("./validations/IP");
 const IPv4 = require("./validations/IPv4");
 const IPv6 = require("./validations/IPv6");
+const MACAddress = require("./validations/MACAddress");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  MACAddress() {
+    return this.registerValidation(new MACAddress());
   }
 
   IP() {

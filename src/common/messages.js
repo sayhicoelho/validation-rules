@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    macaddress: "The :attribute must be a valid MAC Address.",
     ip: "The :attribute must be a valid IP.",
     ipv4: "The :attribute must be a valid IPv4.",
     ipv6: "The :attribute must be a valid IPv6.",
@@ -26,6 +27,7 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    macaddress: "O campo :attribute tem que ser um Endereço MAC válido.",
     ip: "O campo :attribute tem que ser um IP válido.",
     ipv4: "O campo :attribute tem que ser um IPv4 válido.",
     ipv6: "O campo :attribute tem que ser um IPv6 válido.",
