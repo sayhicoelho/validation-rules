@@ -1,7 +1,7 @@
 const Validation = require("../Validation");
 
 class Unique extends Validation {
-  constructor(model, ignoreId = null) {
+  constructor(model, ignoreId) {
     super();
 
     this.model = model;
