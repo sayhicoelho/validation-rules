@@ -8,6 +8,31 @@ module.exports.isArray = obj => {
   return Object.prototype.toString.call(obj) === "[object Array]";
 };
 
+module.exports.isCEP = cep => {
+  cep = cep.replace(/[^\d]+/g, "");
+
+  if (cep == "") return false;
+
+  if (cep.length != 8) return false;
+
+  // Elimina CNPJs invalidos conhecidos
+  if (
+    cep == "00000000" ||
+    cep == "11111111" ||
+    cep == "22222222" ||
+    cep == "33333333" ||
+    cep == "44444444" ||
+    cep == "55555555" ||
+    cep == "66666666" ||
+    cep == "77777777" ||
+    cep == "88888888" ||
+    cep == "99999999"
+  )
+    return false;
+
+  return true;
+};
+
 module.exports.isRG = numero => {
   numero = numero.replace(/[^\d]+/g, "");
 

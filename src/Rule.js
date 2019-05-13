@@ -16,10 +16,15 @@ const Array = require("./validations/Array");
 const CNPJ = require("./validations/CNPJ");
 const CPF = require("./validations/CPF");
 const RG = require("./validations/RG");
+const CEP = require("./validations/CEP");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  cep() {
+    return this.registerValidation(new CEP());
   }
 
   cnpj() {

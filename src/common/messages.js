@@ -1,6 +1,7 @@
 module.exports = {
   en: {
     cnpj: "The :attribute must be a CNPJ.",
+    cep: "The :attribute must be a CEP.",
     cpf: "The :attribute must be a CPF.",
     rg: "The :attribute must be a RG.",
     array: "The :attribute must be an array.",
@@ -21,6 +22,7 @@ module.exports = {
   },
   pt: {
     cnpj: "O campo :attribute tem que ser um CNPJ válido.",
+    cep: "O campo :attribute tem que ser um CNPJ válido.",
     cpf: "O campo :attribute tem que ser um CPF válido.",
     rg: "O campo :attribute tem que ser um RG válido.",
     array: "O campo :attribute tem que ser uma lista.",
