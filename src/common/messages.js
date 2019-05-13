@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    uuid: "The :attribute must be a valid UUID.",
     macaddress: "The :attribute must be a valid MAC Address.",
     ip: "The :attribute must be a valid IP.",
     ipv4: "The :attribute must be a valid IPv4.",
@@ -27,6 +28,7 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    uuid: "O campo :attribute tem que ser um UUID válido.",
     macaddress: "O campo :attribute tem que ser um Endereço MAC válido.",
     ip: "O campo :attribute tem que ser um IP válido.",
     ipv4: "O campo :attribute tem que ser um IPv4 válido.",
