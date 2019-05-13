@@ -1,9 +1,9 @@
 module.exports = {
   en: {
-    cnpj: "The :attribute must be a CNPJ.",
-    cep: "The :attribute must be a CEP.",
-    cpf: "The :attribute must be a CPF.",
-    rg: "The :attribute must be a RG.",
+    cnpj: "The :attribute must be a valid CNPJ.",
+    cep: "The :attribute must be a valid CEP.",
+    cpf: "The :attribute must be a valid CPF.",
+    rg: "The :attribute must be a valid RG.",
     array: "The :attribute must be an array.",
     boolean: "The :attribute must be a boolean.",
     double: "The :attribute must be a double.",
