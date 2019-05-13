@@ -1,3 +1,7 @@
+module.exports.joinWithSeparator = (arr, separator = "and") => {
+  return arr.slice(0, -1).join(", ") + ` ${separator} ` + arr.slice(-1);
+};
+
 module.exports.isEmail = str => {
   const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 

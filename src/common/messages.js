@@ -1,5 +1,7 @@
 module.exports = {
   en: {
+    endswith: "The :attribute must end with one of the following: :ends.",
+    startswith: "The :attribute must start with one of the following: :starts.",
     uuid: "The :attribute must be a valid UUID.",
     macaddress: "The :attribute must be a valid MAC Address.",
     ip: "The :attribute must be a valid IP.",
@@ -28,6 +30,10 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    endswith:
+      "O campo :attribute tem que iniciar com um desses valores: :ends.",
+    startswith:
+      "The :attribute tem que iniciar com um desses valores: :starts.",
     uuid: "O campo :attribute tem que ser um UUID válido.",
     macaddress: "O campo :attribute tem que ser um Endereço MAC válido.",
     ip: "O campo :attribute tem que ser um IP válido.",

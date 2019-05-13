@@ -3,6 +3,7 @@ class Validation {
 
   get messages() {}
   get name() {}
+  get separator() {}
 
   handle() {}
 }

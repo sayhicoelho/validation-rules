@@ -24,10 +24,20 @@ const IPv4 = require("./validations/IPv4");
 const IPv6 = require("./validations/IPv6");
 const MACAddress = require("./validations/MACAddress");
 const UUID = require("./validations/UUID");
+const StartsWith = require("./validations/StartsWith");
+const EndsWith = require("./validations/EndsWith");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  startsWith(starts) {
+    return this.registerValidation(new StartsWith(starts));
+  }
+
+  endsWith(ends) {
+    return this.registerValidation(new EndsWith(ends));
   }
 
   UUID() {

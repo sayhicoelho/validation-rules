@@ -1,5 +1,6 @@
 const messages = require("./common/messages");
 const attributes = require("./common/attributes");
+const { joinWithSeparator, isArray } = require("./common/utils");
 
 class Validator {
   constructor(lang = "en") {
@@ -62,7 +63,12 @@ function getMessage(attribute, validation, lang) {
   }
 
   for (let param in validation) {
-    const value = validation[param];
+    let value = validation[param];
+
+    value = isArray(value)
+      ? joinWithSeparator(value, validation.separator)
+      : value;
+
     message = replaceMessage(message, param, value);
   }
 
