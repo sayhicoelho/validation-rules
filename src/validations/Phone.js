@@ -2,9 +2,16 @@ const Validation = require("../Validation");
 
 class Phone extends Validation {
   async handle(attribute, value, data, lang) {
-    const pattern = /^[0-9]{11,13}$/;
+    value = value.replace(/[^\d]+/g, "");
 
-    return pattern.test(value);
+    switch (lang) {
+      case "en":
+        return /^[0-9]{11}$/.test(value);
+      case "pt":
+        return /^[0-9]{12,13}$/.test(value);
+      default:
+        return /^[0-9]{12}$/.test(value);
+    }
   }
 }
 
