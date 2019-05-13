@@ -44,7 +44,7 @@ class Rule extends BaseRule {
     return this.registerValidation(new Array());
   }
 
-  URL() {
+  url() {
     return this.registerValidation(new URL());
   }
 
@@ -60,23 +60,23 @@ class Rule extends BaseRule {
     return this.registerValidation(new EndsWith(ends));
   }
 
-  UUID() {
+  uuid() {
     return this.registerValidation(new UUID());
   }
 
-  MACAddress() {
+  macAddress() {
     return this.registerValidation(new MACAddress());
   }
 
-  IP() {
+  ip() {
     return this.registerValidation(new IP());
   }
 
-  IPv4() {
+  ipv4() {
     return this.registerValidation(new IPv4());
   }
 
-  IPv6() {
+  ipv6() {
     return this.registerValidation(new IPv6());
   }
 
