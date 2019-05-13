@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    integer: "The :attribute must be an integer.",
     accepted: "The :attribute must be accepted.",
     required: "The :attribute is required.",
     string: "The :attribute must be a string.",
@@ -13,7 +14,8 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
-    accepted: "O campo :attribute tem que ser aceito.",
+    accepted: "O campo :attribute tem que ser um número inteiro.",
+    integer: "O campo :attribute tem que ser aceito.",
     required: "O campo :attribute é obrigatório.",
     string: "O campo :attribute tem que ser uma string.",
     email: "O campo :attribute tem que ser um email válido.",
