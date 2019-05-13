@@ -8,7 +8,8 @@ module.exports = {
     maxlength: "The :attribute may not be greater than :max characters.",
     length: "The :attribute must be :length characters.",
     unique: "The :attribute has already been taken.",
-    phone: "The :attribute format is invalid."
+    phone: "The :attribute format is invalid.",
+    regex: "The :attribute format is invalid."
   },
   pt: {
     required: "O campo :attribute é obrigatório.",
@@ -19,6 +20,7 @@ module.exports = {
     maxlength: "O campo :attribute não pode conter mais de :max caracteres.",
     length: "O campo :attribute tem que ter exatos :length caracteres.",
     unique: "O campo :attribute já está sendo usado.",
-    phone: "O formato do campo :attribute é inválido."
+    phone: "O formato do campo :attribute é inválido.",
+    regex: "O formato do campo :attribute é inválido."
   }
 };

@@ -20,7 +20,7 @@ const rules = [
     .required()
     .string()
     .minlength(3)
-    .regex(/^\w{1,}$/),
+    .custom("Renan"),
   new Rule("email")
     .required()
     .string()

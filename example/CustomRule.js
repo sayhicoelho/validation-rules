@@ -1,9 +1,9 @@
 const { Rule } = require("..");
-const Regex = require("./validations/Regex");
+const Custom = require("./validations/Custom");
 
 class CustomRule extends Rule {
-  regex(pattern) {
-    return this.registerValidation(new Regex(pattern));
+  custom(value) {
+    return this.registerValidation(new Custom(value));
   }
 }
 

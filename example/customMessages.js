@@ -1,8 +1,8 @@
 module.exports = {
   en: {
-    regex: "The :attribute format is invalid."
+    custom: "The :attribute value must be :param."
   },
   pt: {
-    regex: "O formato do campo :attribute é inválido."
+    custom: "O campo :attribute precisa ser igual a :param."
   }
 };
