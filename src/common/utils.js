@@ -1,3 +1,16 @@
+module.exports.isValidTimeZone = tz => {
+  if (!Intl || !Intl.DateTimeFormat().resolvedOptions().timeZone) {
+    throw "Time zones are not available in this environment";
+  }
+
+  try {
+    Intl.DateTimeFormat(undefined, { timeZone: tz });
+    return true;
+  } catch (ex) {
+    return false;
+  }
+};
+
 module.exports.joinWithSeparator = (arr, separator = "and") => {
   return arr.slice(0, -1).join(", ") + ` ${separator} ` + arr.slice(-1);
 };

@@ -28,8 +28,13 @@ const StartsWith = require("./validations/StartsWith");
 const EndsWith = require("./validations/EndsWith");
 const Slug = require("./validations/Slug");
 const URL = require("./validations/URL");
+const TimeZone = require("./validations/TimeZone");
 
 class Rule extends BaseRule {
+  timeZone() {
+    return this.registerValidation(new TimeZone());
+  }
+
   array() {
     return this.registerValidation(new Array());
   }
