@@ -3,3 +3,7 @@ module.exports.isEmail = str => {
 
   return pattern.test(str);
 };
+
+module.exports.isArray = obj => {
+  return Object.prototype.toString.call(obj) === "[object Array]";
+};

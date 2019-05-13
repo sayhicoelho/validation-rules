@@ -12,8 +12,13 @@ const Accepted = require("./validations/Accepted");
 const Integer = require("./validations/Integer");
 const Double = require("./validations/Double");
 const Boolean = require("./validations/Boolean");
+const Array = require("./validations/Array");
 
 class Rule extends BaseRule {
+  array() {
+    return this.registerValidation(new Array());
+  }
+
   required() {
     return this.registerValidation(new Required());
   }

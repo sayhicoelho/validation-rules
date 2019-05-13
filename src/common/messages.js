@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    array: "The :attribute must be an array.",
     boolean: "The :attribute must be a boolean.",
     double: "The :attribute must be a double.",
     integer: "The :attribute must be an integer.",
@@ -16,7 +17,8 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
-    boolean: 'O campo :attribute tem que ser verdadeiro ou falso.',
+    array: "O campo :attribute tem que ser uma lista.",
+    boolean: "O campo :attribute tem que ser verdadeiro ou falso.",
     double:
       "O campo :attribute tem que ser um número com o máximo de 8 dígitos e 2 casas decimais.",
     accepted: "O campo :attribute tem que ser um número inteiro.",
