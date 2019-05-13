@@ -11,6 +11,7 @@ const Phone = require("./validations/Phone");
 const Accepted = require("./validations/Accepted");
 const Integer = require("./validations/Integer");
 const Double = require("./validations/Double");
+const Boolean = require("./validations/Boolean");
 
 class Rule extends BaseRule {
   required() {
@@ -59,6 +60,10 @@ class Rule extends BaseRule {
 
   double() {
     return this.registerValidation(new Double());
+  }
+
+  boolean() {
+    return this.registerValidation(new Boolean());
   }
 }
 
