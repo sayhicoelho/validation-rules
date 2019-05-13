@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    url: "The :attribute must be a valid URL.",
     slug: "The :attribute must be a valid slug.",
     endswith: "The :attribute must end with one of the following: :ends.",
     startswith: "The :attribute must start with one of the following: :starts.",
@@ -31,6 +32,7 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    url: "O campo :attribute tem que ser um URL válido.",
     slug: "O campo :attribute tem que ser um slug válido.",
     endswith:
       "O campo :attribute tem que iniciar com um desses valores: :ends.",

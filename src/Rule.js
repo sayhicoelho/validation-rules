@@ -27,10 +27,15 @@ const UUID = require("./validations/UUID");
 const StartsWith = require("./validations/StartsWith");
 const EndsWith = require("./validations/EndsWith");
 const Slug = require("./validations/Slug");
+const URL = require("./validations/URL");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  URL() {
+    return this.registerValidation(new URL());
   }
 
   slug() {
