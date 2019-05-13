@@ -1,6 +1,8 @@
 module.exports = {
   en: {
     cnpj: "The :attribute must be a valid CNPJ.",
+    different: "The :attribute must be different than :than.",
+    same: "The :attribute must be the same as :as.",
     cep: "The :attribute must be a valid CEP.",
     cpf: "The :attribute must be a valid CPF.",
     rg: "The :attribute must be a valid RG.",
@@ -22,6 +24,8 @@ module.exports = {
   },
   pt: {
     cnpj: "O campo :attribute tem que ser um CNPJ válido.",
+    different: "O campo :attribute tem que ser diferente de :than.",
+    same: "O campo :attribute tem que ser igual a :as.",
     cep: "O campo :attribute tem que ser um CNPJ válido.",
     cpf: "O campo :attribute tem que ser um CPF válido.",
     rg: "O campo :attribute tem que ser um RG válido.",

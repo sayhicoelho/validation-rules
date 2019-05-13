@@ -17,6 +17,8 @@ const CNPJ = require("./validations/CNPJ");
 const CPF = require("./validations/CPF");
 const RG = require("./validations/RG");
 const CEP = require("./validations/CEP");
+const Different = require("./validations/Different");
+const Same = require("./validations/Same");
 
 class Rule extends BaseRule {
   array() {
@@ -25,6 +27,14 @@ class Rule extends BaseRule {
 
   cep() {
     return this.registerValidation(new CEP());
+  }
+
+  different(than) {
+    return this.registerValidation(new Different(than));
+  }
+
+  same(as) {
+    return this.registerValidation(new Same(as));
   }
 
   cnpj() {
