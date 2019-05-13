@@ -8,6 +8,7 @@ const MaxLength = require("./validations/MaxLength");
 const Length = require("./validations/Length");
 const Unique = require("./validations/Unique");
 const Phone = require("./validations/Phone");
+const Accepted = require("./validations/Accepted");
 
 class Rule extends BaseRule {
   required() {
@@ -44,6 +45,10 @@ class Rule extends BaseRule {
 
   phone() {
     return this.registerValidation(new Phone());
+  }
+
+  accepted() {
+    return this.registerValidation(new Accepted());
   }
 }
 
