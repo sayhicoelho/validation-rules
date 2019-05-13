@@ -13,10 +13,25 @@ const Integer = require("./validations/Integer");
 const Double = require("./validations/Double");
 const Boolean = require("./validations/Boolean");
 const Array = require("./validations/Array");
+const CNPJ = require("./validations/CNPJ");
+const CPF = require("./validations/CPF");
+const RG = require("./validations/RG");
 
 class Rule extends BaseRule {
   array() {
     return this.registerValidation(new Array());
+  }
+
+  cnpj() {
+    return this.registerValidation(new CNPJ());
+  }
+
+  cpf() {
+    return this.registerValidation(new CPF());
+  }
+
+  rg() {
+    return this.registerValidation(new RG());
   }
 
   required() {

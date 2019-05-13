@@ -1,5 +1,8 @@
 module.exports = {
   en: {
+    cnpj: "The :attribute must be a CNPJ.",
+    cpf: "The :attribute must be a CPF.",
+    rg: "The :attribute must be a RG.",
     array: "The :attribute must be an array.",
     boolean: "The :attribute must be a boolean.",
     double: "The :attribute must be a double.",
@@ -17,6 +20,9 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    cnpj: "O campo :attribute tem que ser um CNPJ válido.",
+    cpf: "O campo :attribute tem que ser um CPF válido.",
+    rg: "O campo :attribute tem que ser um RG válido.",
     array: "O campo :attribute tem que ser uma lista.",
     boolean: "O campo :attribute tem que ser verdadeiro ou falso.",
     double:
