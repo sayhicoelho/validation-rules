@@ -26,7 +26,12 @@ class Validator {
 
       for (let validation of validations) {
         const value = data[attribute];
-        const validated = await validation.handle(attribute, value, data);
+        const validated = await validation.handle(
+          attribute,
+          value,
+          data,
+          this.lang
+        );
 
         if (!validated) {
           const message = getMessage(attribute, validation, this.lang);

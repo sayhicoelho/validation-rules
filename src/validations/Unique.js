@@ -8,7 +8,7 @@ class Unique extends Validation {
     this.ignoreId = ignoreId;
   }
 
-  async handle(attribute, value, data) {
+  async handle(attribute, value, data, lang) {
     const exists =
       (await this.model.countDocuments({
         _id: { $ne: this.ignoreId },

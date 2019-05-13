@@ -7,7 +7,7 @@ class MaxLength extends Validation {
     this.max = max;
   }
 
-  async handle(attribute, value, data) {
+  async handle(attribute, value, data, lang) {
     return value.length <= this.max;
   }
 }

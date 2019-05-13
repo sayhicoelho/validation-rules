@@ -7,7 +7,7 @@ class Length extends Validation {
     this.length = length;
   }
 
-  async handle(attribute, value, data) {
+  async handle(attribute, value, data, lang) {
     return value.length == this.length;
   }
 }

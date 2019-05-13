@@ -7,7 +7,7 @@ class MinLength extends Validation {
     this.min = min;
   }
 
-  async handle(attribute, value, data) {
+  async handle(attribute, value, data, lang) {
     return value.length >= this.min;
   }
 }

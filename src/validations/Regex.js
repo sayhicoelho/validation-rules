@@ -7,7 +7,7 @@ class Regex extends Validation {
     this.pattern = pattern;
   }
 
-  async handle(attribute, value, data) {
+  async handle(attribute, value, data, lang) {
     return this.pattern.test(value);
   }
 }

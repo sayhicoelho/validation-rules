@@ -7,7 +7,7 @@ class Confirmed extends Validation {
     this.toMatch = toMatch;
   }
 
-  async handle(attribute, value, data) {
+  async handle(attribute, value, data, lang) {
     return value == data[this.toMatch];
   }
 }
