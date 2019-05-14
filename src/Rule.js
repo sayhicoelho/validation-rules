@@ -44,8 +44,13 @@ const RequiredWithAll = require("./validations/RequiredWithAll");
 const RequiredWithout = require("./validations/RequiredWithout");
 const RequiredWithoutAll = require("./validations/RequiredWithoutAll");
 const Date = require("./validations/Date");
+const DateTime = require("./validations/DateTime");
 
 class Rule extends BaseRule {
+  dateTime() {
+    return this.registerValidation(new DateTime());
+  }
+
   date() {
     return this.registerValidation(new Date());
   }

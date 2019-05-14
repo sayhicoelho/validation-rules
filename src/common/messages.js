@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    dateTime: "The :attribute must be a valid date and time.",
     date: "The :attribute must be a valid date.",
     requiredWithoutAll: "The :attribute is required.",
     requiredWithout: "The :attribute is required.",
@@ -48,7 +49,8 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
-    date: "O campo :attribute precisa ser uma data.",
+    dateTime: "O campo :attribute precisa ser uma data válida.",
+    date: "O campo :attribute precisa ser uma data e hora válida.",
     requiredWithoutAll: "O campo :attribute é obrigatório.",
     requiredWithout: "O campo :attribute é obrigatório.",
     requiredWithAll: "O campo :attribute é obrigatório.",
