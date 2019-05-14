@@ -1,5 +1,7 @@
 module.exports = {
   en: {
+    requiredWithAll: "The :attribute is required.",
+    requiredWith: "The :attribute is required.",
     requiredUnless: "The :attribute is required.",
     requiredIf: "The :attribute is required.",
     lowerThanField: "The :attribute must be lower than field :field.",
@@ -43,6 +45,8 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    requiredWithAll: "O campo :attribute é obrigatório.",
+    requiredWith: "O campo :attribute é obrigatório.",
     requiredUnless: "O campo :attribute é obrigatório.",
     requiredIf: "O campo :attribute é obrigatório.",
     lowerThanField:
