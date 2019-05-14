@@ -41,8 +41,18 @@ const RequiredIf = require("./validations/RequiredIf");
 const RequiredUnless = require("./validations/RequiredUnless");
 const RequiredWith = require("./validations/RequiredWith");
 const RequiredWithAll = require("./validations/RequiredWithAll");
+const RequiredWithout = require("./validations/RequiredWithout");
+const RequiredWithoutAll = require("./validations/RequiredWithoutAll");
 
 class Rule extends BaseRule {
+  requiredWithoutAll(fields) {
+    return this.registerValidation(new RequiredWithoutAll(fields));
+  }
+
+  requiredWithout(fields) {
+    return this.registerValidation(new RequiredWithout(fields));
+  }
+
   requiredWithAll(fields) {
     return this.registerValidation(new RequiredWithAll(fields));
   }
