@@ -1,5 +1,7 @@
 module.exports = {
   en: {
+    lowerThanField: "The :attribute must be lower than field :field.",
+    lowerThan: "The :attribute must be lower than :value.",
     greaterThanField: "The :attribute must be greater than field :field.",
     greaterThan: "The :attribute must be greater than :value.",
     json: "The :attribute must be a valid JSON.",
@@ -39,6 +41,9 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    lowerThanField:
+      "O campo :attribute tem que ser menor do que o campo :field.",
+    lowerThan: "O campo :attribute tem que ser menor do que :value.",
     greaterThanField:
       "O campo :attribute tem que ser maior do que o campo :field.",
     greaterThan: "O campo :attribute tem que ser maior do que :value.",
