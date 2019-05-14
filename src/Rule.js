@@ -38,8 +38,13 @@ const GreaterThanField = require("./validations/GreaterThanField");
 const LowerThan = require("./validations/LowerThan");
 const LowerThanField = require("./validations/LowerThanField");
 const RequiredIf = require("./validations/RequiredIf");
+const RequiredUnless = require("./validations/RequiredUnless");
 
 class Rule extends BaseRule {
+  requiredUnless(field, value) {
+    return this.registerValidation(new RequiredUnless(field, value));
+  }
+
   requiredIf(field, value) {
     return this.registerValidation(new RequiredIf(field, value));
   }
