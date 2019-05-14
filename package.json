@@ -15,5 +15,8 @@
   "repository": "https://github.com/sayhicoelho/validation-rules",
   "author": "Renan Coelho <sayhicoelho@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }
