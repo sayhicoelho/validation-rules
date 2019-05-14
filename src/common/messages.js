@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    json: "The :attribute must be a valid JSON.",
     notInArray: "The :attribute must not be one of the following: :values.",
     inArray: "The :attribute must be one of the following: :values.",
     distinct: "The :attribute must have not duplicated values.",
@@ -36,6 +37,7 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    json: "O campo :attribute tem que ser um JSON válido.",
     notInArray: "O campo :attribute não pode ser um dos valores: :values.",
     inArray: "O campo :attribute tem que ser um dos valores: :values.",
     distinct: "O campo :attribute não pode ter valores duplicados.",

@@ -32,8 +32,13 @@ const TimeZone = require("./validations/TimeZone");
 const Distinct = require("./validations/Distinct");
 const InArray = require("./validations/InArray");
 const NotInArray = require("./validations/NotInArray");
+const JSON = require("./validations/JSON");
 
 class Rule extends BaseRule {
+  json() {
+    return this.registerValidation(new JSON());
+  }
+
   notInArray(values) {
     return this.registerValidation(new NotInArray(values));
   }

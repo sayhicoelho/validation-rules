@@ -1,3 +1,12 @@
+module.exports.isValidJSON = json => {
+  try {
+    JSON.parse(json);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 module.exports.camalize = str => {
   return str
     .replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
