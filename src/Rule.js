@@ -31,8 +31,13 @@ const URL = require("./validations/URL");
 const TimeZone = require("./validations/TimeZone");
 const Distinct = require("./validations/Distinct");
 const InArray = require("./validations/InArray");
+const NotInArray = require("./validations/NotInArray");
 
 class Rule extends BaseRule {
+  notInArray(values) {
+    return this.registerValidation(new NotInArray(values));
+  }
+
   inArray(values) {
     return this.registerValidation(new InArray(values));
   }
