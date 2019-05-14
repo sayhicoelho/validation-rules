@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    inarray: "The :attribute must be one of the following: :values.",
     distinct: "The :attribute must have not duplicated values.",
     timezone: "The :attribute must be a valid timezone.",
     url: "The :attribute must be a valid URL.",
@@ -34,6 +35,7 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    inarray: "O campo :attribute tem que ser um dos valores: :values.",
     distinct: "O campo :attribute não pode ter valores duplicados.",
     timezone: "O campo :attribute tem que ser um timezone válido.",
     url: "O campo :attribute tem que ser um URL válido.",

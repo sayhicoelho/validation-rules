@@ -30,8 +30,13 @@ const Slug = require("./validations/Slug");
 const URL = require("./validations/URL");
 const TimeZone = require("./validations/TimeZone");
 const Distinct = require("./validations/Distinct");
+const InArray = require("./validations/InArray");
 
 class Rule extends BaseRule {
+  inArray(values) {
+    return this.registerValidation(new InArray(values));
+  }
+
   distinct() {
     return this.registerValidation(new Distinct());
   }
