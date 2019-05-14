@@ -33,8 +33,13 @@ const Distinct = require("./validations/Distinct");
 const InArray = require("./validations/InArray");
 const NotInArray = require("./validations/NotInArray");
 const JSON = require("./validations/JSON");
+const GreaterThan = require("./validations/GreaterThan");
 
 class Rule extends BaseRule {
+  greaterThan(value) {
+    return this.registerValidation(new GreaterThan(value));
+  }
+
   json() {
     return this.registerValidation(new JSON());
   }

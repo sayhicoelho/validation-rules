@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    greaterThan: "The :attribute must be greater than :value.",
     json: "The :attribute must be a valid JSON.",
     notInArray: "The :attribute must not be one of the following: :values.",
     inArray: "The :attribute must be one of the following: :values.",
@@ -37,6 +38,7 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    greaterThan: "O campo :attribute tem que ser maior do que :value.",
     json: "O campo :attribute tem que ser um JSON válido.",
     notInArray: "O campo :attribute não pode ser um dos valores: :values.",
     inArray: "O campo :attribute tem que ser um dos valores: :values.",
