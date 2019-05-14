@@ -1,6 +1,10 @@
 const Validation = require("../Validation");
 
 class IPv6 extends Validation {
+  get name() {
+    return "ipv6";
+  }
+
   async handle(attribute, value, data, lang) {
     const pattern = /^((?:[0-9A-Fa-f]{1,4}))((?::[0-9A-Fa-f]{1,4}))*::((?:[0-9A-Fa-f]{1,4}))((?::[0-9A-Fa-f]{1,4}))*|((?:[0-9A-Fa-f]{1,4}))((?::[0-9A-Fa-f]{1,4})){7}$/;
 

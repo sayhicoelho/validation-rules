@@ -1,6 +1,6 @@
 const messages = require("./common/messages");
 const attributes = require("./common/attributes");
-const { joinWithSeparator, isArray } = require("./common/utils");
+const { joinWithSeparator, isArray, camalize } = require("./common/utils");
 
 class Validator {
   constructor(lang = "en") {
@@ -88,7 +88,7 @@ function getValidationMessage(attribute, validation, lang) {
 }
 
 function getValidationName(validation) {
-  return validation.name || validation.constructor.name.toLowerCase();
+  return validation.name || camalize(validation.constructor.name);
 }
 
 function replaceAttribute(lang, message, attribute) {
