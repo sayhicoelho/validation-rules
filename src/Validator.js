@@ -111,7 +111,7 @@ function translateAttribute(lang, attribute) {
     attribute = attributes[lang][attribute];
   }
 
-  return attribute.replace("_", " ");
+  return attribute.replace(/_/g, " ");
 }
 
 function hasMessageLang(lang, validationName) {
