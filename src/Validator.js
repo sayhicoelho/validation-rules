@@ -35,9 +35,12 @@ class Validator {
         );
 
         if (!validated) {
+          if (validation.stopOnFail) break;
+
           const message = getMessage(attribute, validation, this.lang);
 
           errors.push({ attribute, message });
+
           break;
         }
       }

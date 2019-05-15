@@ -52,8 +52,13 @@ const DateBefore = require("./validations/DateBefore");
 const DateAfter = require("./validations/DateAfter");
 const Filled = require("./validations/Filled");
 const Present = require("./validations/Present");
+const Sometimes = require("./validations/Sometimes");
 
 class Rule extends BaseRule {
+  sometimes() {
+    return this.registerValidation(new Sometimes());
+  }
+
   present() {
     return this.registerValidation(new Present());
   }
