@@ -1,5 +1,7 @@
 module.exports = {
   en: {
+    dateBefore: "The :attribute must be before :datetime.",
+    dateAfter: "The :attribute must be after :datetime.",
     timestamp: "The :attribute must be in UNIX timestamp format.",
     isoDate: "The :attribute must be in ISO 8601 format.",
     dateFormat: "The :attribute must be in format :format.",
@@ -52,6 +54,8 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
+    dateBefore: "O campo :attribute precisa ser antes de :datetime.",
+    dateAfter: "O campo :attribute precisa ser depois de :datetime.",
     timestamp: "O campo :attribute precisa estar no formato UNIX timestamp.",
     isoDate: "O campo :attribute precisa estar no formato ISO 8601.",
     dateFormat: "O campo :attribute precisa estar no formato :format.",
