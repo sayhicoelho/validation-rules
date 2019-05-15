@@ -50,8 +50,13 @@ const ISODate = require("./validations/ISODate");
 const Timestamp = require("./validations/Timestamp");
 const DateBefore = require("./validations/DateBefore");
 const DateAfter = require("./validations/DateAfter");
+const Filled = require("./validations/Filled");
 
 class Rule extends BaseRule {
+  filled() {
+    return this.registerValidation(new Filled());
+  }
+
   dateAfter(datetime) {
     return this.registerValidation(new DateAfter(datetime));
   }
