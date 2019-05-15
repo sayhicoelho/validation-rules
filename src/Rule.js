@@ -46,8 +46,13 @@ const RequiredWithoutAll = require("./validations/RequiredWithoutAll");
 const Date = require("./validations/Date");
 const DateTime = require("./validations/DateTime");
 const DateFormat = require("./validations/DateFormat");
+const ISODate = require("./validations/ISODate");
 
 class Rule extends BaseRule {
+  isoDate() {
+    return this.registerValidation(new ISODate());
+  }
+
   dateFormat(format) {
     return this.registerValidation(new DateFormat(format));
   }
