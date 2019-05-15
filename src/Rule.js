@@ -51,8 +51,13 @@ const Timestamp = require("./validations/Timestamp");
 const DateBefore = require("./validations/DateBefore");
 const DateAfter = require("./validations/DateAfter");
 const Filled = require("./validations/Filled");
+const Present = require("./validations/Present");
 
 class Rule extends BaseRule {
+  present() {
+    return this.registerValidation(new Present());
+  }
+
   filled() {
     return this.registerValidation(new Filled());
   }

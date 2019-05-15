@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    present: "The :attribute field must be present.",
     filled: "The :attribute field must have a value.",
     dateBefore: "The :attribute must be before :datetime.",
     dateAfter: "The :attribute must be after :datetime.",
@@ -55,7 +56,8 @@ module.exports = {
     regex: "The :attribute format is invalid."
   },
   pt: {
-    filled: "The :attribute tem que ter um valor.",
+    present: "O campo :attribute tem que estar presente.",
+    filled: "O campo :attribute tem que ter um valor.",
     dateBefore: "O campo :attribute precisa ser antes de :datetime.",
     dateAfter: "O campo :attribute precisa ser depois de :datetime.",
     timestamp: "O campo :attribute precisa estar no formato UNIX timestamp.",
