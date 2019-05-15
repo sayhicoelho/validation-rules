@@ -47,8 +47,13 @@ const Date = require("./validations/Date");
 const DateTime = require("./validations/DateTime");
 const DateFormat = require("./validations/DateFormat");
 const ISODate = require("./validations/ISODate");
+const Timestamp = require("./validations/Timestamp");
 
 class Rule extends BaseRule {
+  timestamp() {
+    return this.registerValidation(new Timestamp());
+  }
+
   isoDate() {
     return this.registerValidation(new ISODate());
   }
