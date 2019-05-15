@@ -53,8 +53,13 @@ const DateAfter = require("./validations/DateAfter");
 const Filled = require("./validations/Filled");
 const Present = require("./validations/Present");
 const Sometimes = require("./validations/Sometimes");
+const Nullable = require("./validations/Nullable");
 
 class Rule extends BaseRule {
+  nullable() {
+    return this.registerValidation(new Nullable());
+  }
+
   sometimes() {
     return this.registerValidation(new Sometimes());
   }
