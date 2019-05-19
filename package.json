@@ -1,6 +1,6 @@
 {
   "name": "validation-rules",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A simple validator for Javascript.",
   "main": "index.js",
   "scripts": {
