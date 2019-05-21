@@ -12,7 +12,7 @@ class Validator {
   }
 
   static setCustomMessages(customMessages) {
-    updateObj(customMessages, attributes);
+    updateObj(customMessages, messages);
   }
 
   static setCustomAttributes(customAttributes) {
@@ -27,12 +27,7 @@ class Validator {
 
       for (let validation of validations) {
         const value = data[attribute];
-        const validated = await validation.handle(
-          attribute,
-          value,
-          data,
-          this.lang
-        );
+        const validated = await validation.handle(attribute, value, data, this.lang);
 
         if (!validated) {
           if (validation.stopOnFail) break;
@@ -68,9 +63,7 @@ function getMessage(attribute, validation, lang) {
   for (let param in validation) {
     let value = validation[param];
 
-    value = isArray(value)
-      ? joinWithSeparator(value, validation.separator)
-      : value;
+    value = isArray(value) ? joinWithSeparator(value, validation.separator) : value;
 
     message = replaceMessage(message, param, value);
   }
@@ -95,11 +88,7 @@ function getValidationName(validation) {
 }
 
 function replaceAttribute(lang, message, attribute) {
-  return replaceMessage(
-    message,
-    "attribute",
-    translateAttribute(lang, attribute)
-  );
+  return replaceMessage(message, "attribute", translateAttribute(lang, attribute));
 }
 
 function replaceMessage(message, param, value) {
