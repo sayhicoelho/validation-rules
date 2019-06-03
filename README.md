@@ -187,6 +187,7 @@ module.exports = router;
 ## TODO
 The below list are the features we need to add to this library to make it great.
 
+- Add file validation.
 - Add TypeScript to improve intellisense.
 - Add tests.
 
