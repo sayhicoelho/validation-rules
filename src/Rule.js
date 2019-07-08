@@ -57,6 +57,7 @@ const Nullable = require("./validations/Nullable");
 const Exists = require("./validations/Exists");
 const ArrayExists = require("./validations/ArrayExists");
 const ObjectId = require("./validations/ObjectId");
+const ArrayObjectId = require("./validations/ArrayObjectId");
 
 class Rule extends BaseRule {
   nullable() {
@@ -289,6 +290,10 @@ class Rule extends BaseRule {
 
   objectId() {
     return this.registerValidation(new ObjectId());
+  }
+
+  arrayObjectId() {
+    return this.registerValidation(new ArrayObjectId());
   }
 }
 
