@@ -54,6 +54,9 @@ const Filled = require("./validations/Filled");
 const Present = require("./validations/Present");
 const Sometimes = require("./validations/Sometimes");
 const Nullable = require("./validations/Nullable");
+const Exists = require("./validations/Exists");
+const ArrayExists = require("./validations/ArrayExists");
+const ObjectId = require("./validations/ObjectId");
 
 class Rule extends BaseRule {
   nullable() {
@@ -274,6 +277,18 @@ class Rule extends BaseRule {
 
   boolean() {
     return this.registerValidation(new Boolean());
+  }
+
+  exists(model) {
+    return this.registerValidation(new Exists(model));
+  }
+
+  arrayExists(model) {
+    return this.registerValidation(new ArrayExists(model));
+  }
+
+  objectId() {
+    return this.registerValidation(new ObjectId());
   }
 }
 
