@@ -10,7 +10,7 @@ class ArrayExists extends Validation {
   get messages() {
     return {
       en: 'Some of :attribute does not exists in database.',
-      pt: 'Algumas :attribute não existem em nossa base de dados.'
+      pt: 'Alguns valores do campo :attribute não existem em nossa base de dados.'
     }
   }
 
