@@ -14,13 +14,13 @@ class ArrayExists extends Validation {
     }
   }
 
-  async handle(attribute, value, data, lang) {
+  async handle(attribute, values, data, lang) {
     const exists =
       (await this.model.countDocuments({
         _id: {
-          $in: value
+          $in: values
         }
-      })) == value.length;
+      })) == values.length;
 
     return exists;
   }
